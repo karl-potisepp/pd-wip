@@ -1,2 +1,9 @@
-#N canvas 420 244 450 300 10;
+#N canvas 259 201 919 432 10;
 #X text 18 10 TODO midi conf init;
+#N canvas 0 51 450 300 init_akai 0;
+#X obj 10 14 loadbang;
+#X msg 10 36 midi-dialog 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 2 2;
+#X obj 10 58 s pd;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X restore 168 9 pd init_akai;
