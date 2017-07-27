@@ -1,4 +1,4 @@
-#N canvas 343 66 919 432 10;
+#N canvas 329 120 919 432 10;
 #N canvas 0 51 450 300 init_akai 0;
 #X obj 10 14 loadbang;
 #X msg 10 36 midi-dialog 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 2 2;
@@ -7,7 +7,7 @@
 #X connect 1 0 2 0;
 #X restore 168 9 pd init_akai;
 #X obj 543 24 vsl 15 128 0 127 0 0 empty akaictlin_1_1 empty 0 -9 0
-10 -262144 -1 -1 6400 1;
+10 -262144 -1 -1 0 1;
 #X obj 563 24 vsl 15 128 0 127 0 0 empty akaictlin_2_1 empty 0 -9 0
 10 -262144 -1 -1 6400 1;
 #X obj 583 24 vsl 15 128 0 127 0 0 empty akaictlin_3_1 empty 0 -9 0
@@ -48,3 +48,10 @@
 #X connect 12 0 13 0;
 #X connect 14 0 15 0;
 #X restore 703 22 pd prog1;
+#X obj 50 67 notein 1;
+#X floatatom 50 89 5 0 0 0 - - -, f 5;
+#X floatatom 103 90 5 0 0 0 - - -, f 5;
+#X text 209 50 TODO mikibrute adapt;
+#X text 208 65 TODO clock to akai;
+#X connect 10 0 11 0;
+#X connect 10 1 12 0;

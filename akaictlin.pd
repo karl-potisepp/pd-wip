@@ -1,0 +1,6 @@
+#N canvas 751 289 450 300 10;
+#X obj 34 30 ctlin \$1 \$2;
+#X obj 34 52 valuescale 64;
+#X obj 34 74 outlet value;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
