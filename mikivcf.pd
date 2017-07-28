@@ -1,0 +1,31 @@
+#N canvas 55 229 668 312 12;
+#X obj 113 23 inlet~ signal;
+#X obj 142 197 outlet~ lowpass;
+#X obj 113 227 outlet~ bandpass;
+#X obj 113 167 vcf~;
+#X obj 19 31 vsl 20 70 20 22000 0 0 \$0-f \$0-f-r f 7 7 0 10 -262144
+-1 -1 4865 1;
+#X obj 231 23 inlet freq;
+#X obj 335 23 inlet q;
+#X obj 39 31 vsl 20 70 0.1 10 1 0 \$0-q \$0-q-r q 7 7 0 10 -262144
+-1 -1 5751 1;
+#X obj 231 113 s \$0-f-r;
+#X obj 231 53 * 21980;
+#X obj 231 83 + 20;
+#X obj 127 57 r \$0-f;
+#X obj 127 87 sig~;
+#X obj 335 73 s \$0-q-r;
+#X obj 142 136 r \$0-q;
+#X obj 335 48 * 10;
+#X connect 0 0 3 0;
+#X connect 3 0 2 0;
+#X connect 3 1 1 0;
+#X connect 5 0 9 0;
+#X connect 6 0 15 0;
+#X connect 9 0 10 0;
+#X connect 10 0 8 0;
+#X connect 11 0 12 0;
+#X connect 12 0 3 1;
+#X connect 14 0 3 2;
+#X connect 15 0 13 0;
+#X coords 0 0 1 1 60 98 1 10 10;

@@ -5,9 +5,9 @@
 #X obj 10 58 s pd;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
-#X restore 168 9 pd init_akai;
-#X obj 543 24 vsl 15 128 0 127 0 0 empty ctlin_1_1_1 empty 0 -9 0 10
--262144 -1 -1 2800 1;
+#X restore 703 43 pd init_akai;
+#X obj 143 24 vsl 15 128 0 127 0 0 empty ctlin_1_1_1 empty 0 -9 0 10
+-262144 -1 -1 700 1;
 #N canvas 186 327 800 327 prog1 0;
 #X obj 156 15 akaictlin 5 1;
 #X floatatom 464 39 5 0 0 0 - - -, f 5;
@@ -35,61 +35,52 @@
 #X connect 4 0 8 0;
 #X connect 12 0 3 0;
 #X restore 703 22 pd prog1;
-#X obj 50 67 notein 1;
-#X floatatom 50 89 5 0 0 0 - - -, f 5;
-#X floatatom 103 90 5 0 0 0 - - -, f 5;
-#X text 209 50 TODO mikibrute adapt;
-#X text 208 65 TODO clock to akai;
-#X obj 50 108 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 164 166 ctlin;
-#X floatatom 164 188 5 0 0 0 - - -, f 5;
-#X floatatom 206 188 5 0 0 0 - - -, f 5;
-#X floatatom 247 188 5 0 0 0 - - -, f 5;
-#X obj 563 24 vsl 15 128 0 127 0 0 empty ctlin_1_2_1 empty 0 -9 0 10
--262144 -1 -1 4100 1;
-#X obj 583 24 vsl 15 128 0 127 0 0 empty ctlin_1_3_1 empty 0 -9 0 10
--262144 -1 -1 3600 1;
-#X obj 603 24 vsl 15 128 0 127 0 0 empty ctlin_1_4_1 empty 0 -9 0 10
--262144 -1 -1 4400 1;
-#X obj 623 24 vsl 15 128 0 127 0 0 empty ctlin_1_5_1 empty 0 -9 0 10
--262144 -1 -1 5200 1;
-#X obj 643 24 vsl 15 128 0 127 0 0 empty ctlin_1_6_1 empty 0 -9 0 10
--262144 -1 -1 6200 1;
-#X obj 663 24 vsl 15 128 0 127 0 0 empty ctlin_1_7_1 empty 0 -9 0 10
--262144 -1 -1 6200 1;
-#X obj 683 24 vsl 15 128 0 127 0 0 empty ctlin_1_8_1 empty 0 -9 0 10
--262144 -1 -1 6800 1;
-#X obj 543 164 vsl 15 128 0 127 0 0 empty ctlin_2_1_1 empty 0 -9 0
-10 -262144 -1 -1 5300 1;
-#X obj 563 164 vsl 15 128 0 127 0 0 empty ctlin_2_2_1 empty 0 -9 0
-10 -262144 -1 -1 5000 1;
-#X obj 583 164 vsl 15 128 0 127 0 0 empty ctlin_2_3_1 empty 0 -9 0
-10 -262144 -1 -1 8700 1;
-#X obj 603 164 vsl 15 128 0 127 0 0 empty ctlin_2_4_1 empty 0 -9 0
-10 -262144 -1 -1 6000 1;
-#X obj 623 164 vsl 15 128 0 127 0 0 empty ctlin_2_5_1 empty 0 -9 0
-10 -262144 -1 -1 3400 1;
-#X obj 643 164 vsl 15 128 0 127 0 0 empty ctlin_2_6_1 empty 0 -9 0
-10 -262144 -1 -1 3700 1;
-#X obj 663 164 vsl 15 128 0 127 0 0 empty ctlin_2_7_1 empty 0 -9 0
-10 -262144 -1 -1 2800 1;
-#X obj 683 164 vsl 15 128 0 127 0 0 empty ctlin_2_8_1 empty 0 -9 0
-10 -262144 -1 -1 3600 1;
+#X text 705 64 TODO mikibrute adapt;
+#X text 704 79 TODO clock to akai;
+#X obj 163 24 vsl 15 128 0 127 0 0 empty ctlin_1_2_1 empty 0 -9 0 10
+-262144 -1 -1 0 1;
+#X obj 183 24 vsl 15 128 0 127 0 0 empty ctlin_1_3_1 empty 0 -9 0 10
+-262144 -1 -1 12700 1;
+#X obj 203 24 vsl 15 128 0 127 0 0 empty ctlin_1_4_1 empty 0 -9 0 10
+-262144 -1 -1 1500 1;
+#X obj 223 24 vsl 15 128 0 127 0 0 empty ctlin_1_5_1 empty 0 -9 0 10
+-262144 -1 -1 0 1;
+#X obj 243 24 vsl 15 128 0 127 0 0 empty ctlin_1_6_1 empty 0 -9 0 10
+-262144 -1 -1 10700 1;
+#X obj 263 24 vsl 15 128 0 127 0 0 empty ctlin_1_7_1 empty 0 -9 0 10
+-262144 -1 -1 4200 1;
+#X obj 283 24 vsl 15 128 0 127 0 0 empty ctlin_1_8_1 empty 0 -9 0 10
+-262144 -1 -1 8100 1;
+#X obj 303 24 vsl 15 128 0 127 0 0 empty ctlin_2_1_1 empty 0 -9 0 10
+-262144 -1 -1 3800 1;
+#X obj 323 24 vsl 15 128 0 127 0 0 empty ctlin_2_2_1 empty 0 -9 0 10
+-262144 -1 -1 0 1;
+#X obj 343 24 vsl 15 128 0 127 0 0 empty ctlin_2_3_1 empty 0 -9 0 10
+-262144 -1 -1 2300 1;
+#X obj 363 24 vsl 15 128 0 127 0 0 empty ctlin_2_4_1 empty 0 -9 0 10
+-262144 -1 -1 5900 1;
+#X obj 383 24 vsl 15 128 0 127 0 0 empty ctlin_2_5_1 empty 0 -9 0 10
+-262144 -1 -1 6700 1;
+#X obj 403 24 vsl 15 128 0 127 0 0 empty ctlin_2_6_1 empty 0 -9 0 10
+-262144 -1 -1 200 1;
+#X obj 423 24 vsl 15 128 0 127 0 0 empty ctlin_2_7_1 empty 0 -9 0 10
+-262144 -1 -1 3900 1;
+#X obj 443 24 vsl 15 128 0 127 0 0 empty ctlin_2_8_1 empty 0 -9 0 10
+-262144 -1 -1 11000 1;
 #X obj 543 304 vsl 15 128 0 127 0 0 empty ctlin_3_1_1 empty 0 -9 0
 10 -262144 -1 -1 0 1;
 #X obj 563 304 vsl 15 128 0 127 0 0 empty ctlin_3_2_1 empty 0 -9 0
-10 -262144 -1 -1 0 1;
+10 -262144 -1 -1 400 1;
 #X obj 583 304 vsl 15 128 0 127 0 0 empty ctlin_3_3_1 empty 0 -9 0
-10 -262144 -1 -1 0 1;
+10 -262144 -1 -1 4600 1;
 #X obj 603 304 vsl 15 128 0 127 0 0 empty ctlin_3_4_1 empty 0 -9 0
 10 -262144 -1 -1 0 1;
 #X obj 623 304 vsl 15 128 0 127 0 0 empty ctlin_3_5_1 empty 0 -9 0
-10 -262144 -1 -1 0 1;
+10 -262144 -1 -1 5700 1;
 #X obj 643 304 vsl 15 128 0 127 0 0 empty ctlin_3_6_1 empty 0 -9 0
-10 -262144 -1 -1 0 1;
+10 -262144 -1 -1 5200 1;
 #X obj 663 304 vsl 15 128 0 127 0 0 empty ctlin_3_7_1 empty 0 -9 0
-10 -262144 -1 -1 0 1;
+10 -262144 -1 -1 8600 1;
 #X obj 683 304 vsl 15 128 0 127 0 0 empty ctlin_3_8_1 empty 0 -9 0
 10 -262144 -1 -1 0 1;
 #X obj 543 444 vsl 15 128 0 127 0 0 empty ctlin_4_1_1 empty 0 -9 0
@@ -108,9 +99,39 @@
 10 -262144 -1 -1 0 1;
 #X obj 683 444 vsl 15 128 0 127 0 0 empty ctlin_4_8_1 empty 0 -9 0
 10 -262144 -1 -1 0 1;
-#X connect 3 0 4 0;
-#X connect 3 1 5 0;
-#X connect 4 0 8 0;
-#X connect 9 0 10 0;
-#X connect 9 1 11 0;
-#X connect 9 2 12 0;
+#X obj 33 36 notein 1;
+#X floatatom 33 58 5 0 0 0 - - -, f 5;
+#X floatatom 86 58 5 0 0 0 - - -, f 5;
+#X obj 33 99 pack 0 0 0;
+#X obj 33 77 poly 1 1;
+#X obj 33 121 route 1;
+#X obj 103 363 brute, f 50;
+#X obj 103 385 dac~;
+#X connect 1 0 42 1;
+#X connect 5 0 42 2;
+#X connect 6 0 42 3;
+#X connect 7 0 42 4;
+#X connect 8 0 42 5;
+#X connect 9 0 42 6;
+#X connect 10 0 42 7;
+#X connect 11 0 42 8;
+#X connect 12 0 42 9;
+#X connect 13 0 42 10;
+#X connect 14 0 42 11;
+#X connect 15 0 42 12;
+#X connect 16 0 42 13;
+#X connect 17 0 42 14;
+#X connect 18 0 42 15;
+#X connect 19 0 42 16;
+#X connect 20 0 42 17;
+#X connect 36 0 37 0;
+#X connect 36 1 38 0;
+#X connect 37 0 40 0;
+#X connect 38 0 40 1;
+#X connect 39 0 41 0;
+#X connect 40 0 39 0;
+#X connect 40 1 39 1;
+#X connect 40 2 39 2;
+#X connect 41 0 42 0;
+#X connect 42 0 43 0;
+#X connect 42 0 43 1;
