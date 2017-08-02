@@ -1,16 +1,18 @@
-#N canvas 17 48 450 300 10;
-#X obj 211 53 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#N canvas 431 341 450 300 10;
+#X obj 211 93 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 211 177 midiout;
-#X obj 102 80 select 0 1;
-#X msg 102 114 252;
-#X msg 139 114 250;
-#X msg 211 107 248;
-#X obj 211 77 metro 20.8333;
-#X floatatom 309 49 5 0 0 0 - - -, f 5;
-#X obj 266 24 expr (60000/$f1/24);
-#X floatatom 264 1 5 0 0 0 - - -, f 5;
-#X text 207 0 BPM-->;
+#X obj 211 217 midiout;
+#X obj 102 120 select 0 1;
+#X msg 102 154 252;
+#X msg 139 154 250;
+#X msg 211 147 248;
+#X obj 211 117 metro 20.8333;
+#X floatatom 309 89 5 0 0 0 - - -, f 5;
+#X obj 266 64 expr (60000/$f1/24);
+#X floatatom 264 41 5 0 0 0 - - -, f 5;
+#X text 207 40 BPM-->;
+#X obj 160 17 inlet toggle;
+#X obj 264 17 inlet bpm;
 #X connect 0 0 2 0;
 #X connect 0 0 6 0;
 #X connect 2 0 3 0;
@@ -22,3 +24,5 @@
 #X connect 7 0 6 1;
 #X connect 8 0 7 0;
 #X connect 9 0 8 0;
+#X connect 11 0 0 0;
+#X connect 12 0 9 0;
