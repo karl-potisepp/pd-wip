@@ -23,8 +23,9 @@
 #X obj 275 390 oscformat;
 #X obj 222 453 oscformat;
 #X obj 222 493 s osc-out;
-#X connect 0 0 7 0;
+#X obj 401 273 / 127;
 #X connect 0 0 16 0;
+#X connect 0 0 24 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 1;
 #X connect 2 0 15 0;
@@ -53,3 +54,4 @@
 #X connect 20 0 23 0;
 #X connect 21 0 23 0;
 #X connect 22 0 23 0;
+#X connect 24 0 7 0;
