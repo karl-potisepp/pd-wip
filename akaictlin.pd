@@ -1,4 +1,4 @@
-#N canvas 4 55 793 585 12;
+#N canvas 1 53 793 585 12;
 #X obj 401 248 valuescale 0;
 #X obj 222 58 pgmin 1;
 #X obj 222 106 == \$1;
