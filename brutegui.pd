@@ -1,18 +1,18 @@
-#N canvas 379 66 901 554 10;
+#N canvas 487 207 901 554 10;
 #X obj 10 29 cnv 15 430 180 empty empty oscillator 20 12 0 14 -204786
 -66577 0;
 #X obj 23 61 hsl 128 15 0 1 0 0 \$1-osc-sub-amt-s \$1-osc-sub-amt osc_sub_amt
--2 -8 0 10 -262144 -1 -1 6500 1;
+-2 -8 0 10 -262144 -1 -1 8200 1;
 #X obj 23 91 hsl 128 15 0 1 0 0 \$1-osc-saw-amt-s \$1-osc-saw-amt osc_saw_amt
--2 -8 0 10 -262144 -1 -1 0 1;
+-2 -8 0 10 -262144 -1 -1 3800 1;
 #X obj 23 121 hsl 128 15 0 1 0 0 \$1-osc-sq-amt-s \$1-osc-sq-amt osc_sq_amt
--2 -8 0 10 -262144 -1 -1 0 1;
+-2 -8 0 10 -262144 -1 -1 2700 1;
 #X obj 23 151 hsl 128 15 0 1 0 0 \$1-osc-tri-amt-s \$1-osc-tri-amt
-osc_tri_amt -2 -8 0 10 -262144 -1 -1 5500 1;
+osc_tri_amt -2 -8 0 10 -262144 -1 -1 3100 1;
 #X obj 23 181 hsl 128 15 0 1 0 0 \$1-osc-noise-amt-s \$1-osc-noise-amt
 osc_noise_amt -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 163 121 hsl 128 15 0 1 0 0 \$1-osc-sq-pw-s \$1-osc-sq-pw osc_sq_pw
--2 -8 0 10 -262144 -1 -1 1200 1;
+-2 -8 0 10 -262144 -1 -1 3100 1;
 #X obj 163 91 hsl 128 15 0 1 0 0 \$1-osc-ultrasaw-amt-s \$1-osc-ultrasaw-amt
 osc_ultrasaw_amt -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 161 61 hradio 15 1 0 2 \$1-osc-sub-type-s \$1-osc-sub-type osc_sub_sq/sin
@@ -20,13 +20,13 @@ osc_ultrasaw_amt -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 251 61 hradio 15 1 0 2 \$1-osc-sub-oct-s \$1-osc-sub-oct osc_sub_oct
 0 -8 0 10 -262144 -1 -1 0;
 #X obj 303 91 hsl 128 15 0 1 0 0 \$1-osc-ultrasaw-rate-s \$1-osc-ultrasaw-rate
-osc_ultrasaw_rate -2 -8 0 10 -262144 -1 -1 0 1;
+osc_ultrasaw_rate -2 -8 0 10 -262144 -1 -1 3200 1;
 #X obj 303 121 hsl 128 15 0 1 0 0 \$1-osc-sq-pw-env-amt-s \$1-osc-sq-pw-env-amt
-osc_sq_pw_env_amt -2 -8 0 10 -262144 -1 -1 0 1;
+osc_sq_pw_env_amt -2 -8 0 10 -262144 -1 -1 5000 1;
 #X obj 163 151 hsl 128 15 0 1 0 0 \$1-osc-metalizer-amt-s \$1-osc-metalizer-amt
 osc_metalizer_amt -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 304 151 hsl 128 15 0 1 0 0 empty empty osc_metalizer_env_amt
--2 -8 0 10 -262144 -1 -1 0 1;
+-2 -8 0 10 -262144 -1 -1 2500 1;
 #X obj 10 210 cnv 15 430 150 empty empty filter 20 12 0 14 -261682
 -66577 0;
 #X obj 23 241 hsl 128 15 0 1 0 0 \$1-f-env-atk-s \$1-f-env-atk f_env_atk
@@ -38,29 +38,29 @@ osc_metalizer_amt -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 23 331 hsl 128 15 0 1 0 0 \$1-f-env-rel-s \$1-f-env-rel f_env_rel
 -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 163 241 hsl 128 15 0 1 0 0 \$1-f-freq-s \$1-f-freq f_freq -2
--8 0 10 -262144 -1 -1 0 1;
+-8 0 10 -262144 -1 -1 3700 1;
 #X obj 163 271 hsl 128 15 0 1 0 0 \$1-f-res-s \$1-f-res f_res -2 -8
-0 10 -262144 -1 -1 12700 1;
+0 10 -262144 -1 -1 900 1;
 #X obj 163 301 hsl 128 15 0 1 0 0 \$1-f-env-amt-s \$1-f-env-amt f_env_amt
 -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 163 331 hsl 128 15 0 1 0 0 \$1-f-key-trk-s \$1-f-key-trk f_key_trk
--2 -8 0 10 -262144 -1 -1 0 1;
+-2 -8 0 10 -262144 -1 -1 4000 1;
 #X obj 301 241 hradio 15 1 0 2 \$1-f-type-s empty f_type_lp/ntch 0
 -8 0 10 -262144 -1 -1 0;
 #X obj 301 271 hradio 15 1 0 2 \$1-f-env-spd-s empty f_env_fst/slw
-0 -8 0 10 -262144 -1 -1 1;
+0 -8 0 10 -262144 -1 -1 0;
 #X obj 10 361 cnv 15 150 150 empty empty vca 20 12 0 14 -232576 -66577
 0;
 #X obj 161 361 cnv 15 280 150 empty empty lfo 20 12 0 14 -204800 -66577
 0;
 #X obj 23 391 hsl 128 15 0 1 0 0 \$1-vca-env-atk-s \$1-vca-env-atk
-vca_env_atk -2 -8 0 10 -262144 -1 -1 1200 1;
+vca_env_atk -2 -8 0 10 -262144 -1 -1 200 1;
 #X obj 23 421 hsl 128 15 0 1 0 0 \$1-vca-env-dcy-s \$1-vca-env-dcy
-vca_env_dcy -2 -8 0 10 -262144 -1 -1 1300 1;
+vca_env_dcy -2 -8 0 10 -262144 -1 -1 5300 1;
 #X obj 23 451 hsl 128 15 0 1 0 0 \$1-vca-env-sus-s \$1-vca-env-sus
 vca_env_sus -2 -8 0 10 -262144 -1 -1 12700 1;
 #X obj 23 481 hsl 128 15 0 1 0 0 \$1-vca-env-rel-s \$1-vca-env-rel
-vca_env_rel -2 -8 0 10 -262144 -1 -1 2100 1;
+vca_env_rel -2 -8 0 10 -262144 -1 -1 1700 1;
 #X obj 168 391 hsl 128 15 0 1 0 0 \$1-lfo-rate-s \$1-lfo-rate lfo_rate
 -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 168 421 hsl 128 15 0 1 0 0 \$1-lfo-wave-s \$1-lfo-wave lfo_wave
@@ -144,7 +144,7 @@ lfo_vca_amt -2 -8 0 10 -262144 -1 -1 0 1;
 #X connect 25 0 12 1;
 #X connect 26 0 15 0;
 #X restore 450 208 pd vco;
-#N canvas 34 106 450 300 vca 1;
+#N canvas 34 106 450 300 vca 0;
 #X obj 22 22 inlet~;
 #X obj 22 247 outlet~;
 #X obj 177 23 inlet trigger;
@@ -163,44 +163,45 @@ lfo_vca_amt -2 -8 0 10 -262144 -1 -1 0 1;
 #X connect 7 0 3 3;
 #X connect 8 0 3 4;
 #X restore 450 230 pd vca;
-#N canvas 5 55 651 428 vcf 0;
+#N canvas 2 53 651 428 vcf 1;
 #X obj 27 24 inlet~;
 #X obj 27 314 outlet~;
-#X obj 267 24 inlet trigger;
-#X obj 267 150 mikiadsr;
-#X obj 277 45 r \$1-f-env-atk-s;
-#X obj 288 65 r \$1-f-env-dcy-s;
-#X obj 298 85 r \$1-f-env-sus-s;
-#X obj 309 105 r \$1-f-env-rel-s;
-#X obj 320 125 r \$1-f-env-spd-s;
-#X obj 26 232 vcf~;
-#X obj 70 210 r \$1-f-type-s;
-#X obj 52 254 *~;
-#X obj 70 232 invert;
-#X obj 167 24 inlet note;
-#X obj 51 169 * 3;
-#X obj 167 46 mtof;
-#X obj 167 68 sig~;
-#X floatatom 87 254 5 0 0 0 - - -, f 5;
+#X obj 378 30 inlet trigger;
+#X obj 378 156 mikiadsr;
+#X obj 388 51 r \$1-f-env-atk-s;
+#X obj 399 71 r \$1-f-env-dcy-s;
+#X obj 409 91 r \$1-f-env-sus-s;
+#X obj 420 111 r \$1-f-env-rel-s;
+#X obj 431 131 r \$1-f-env-spd-s;
 #X obj 51 147 r \$1-f-res-s;
-#X connect 0 0 9 0;
+#X obj 26 232 bob~;
+#X obj 103 57 sig~ 1;
+#X obj 262 27 r \$1-f-freq-s;
+#X obj 262 49 * 127;
+#X obj 262 71 mtof;
+#X obj 103 79 *~ 2000;
+#X obj 103 101 +~ 100;
+#X obj 51 169 * 4;
+#X obj 51 191 sig~ 3;
+#X floatatom 275 104 5 0 0 0 - - -, f 5;
+#X connect 0 0 10 0;
 #X connect 2 0 3 0;
 #X connect 4 0 3 1;
 #X connect 5 0 3 2;
 #X connect 6 0 3 3;
 #X connect 7 0 3 4;
 #X connect 8 0 3 5;
-#X connect 9 0 1 0;
-#X connect 9 1 11 0;
-#X connect 10 0 12 0;
-#X connect 11 0 1 0;
-#X connect 12 0 11 1;
-#X connect 12 0 17 0;
-#X connect 13 0 15 0;
-#X connect 14 0 9 2;
+#X connect 9 0 17 0;
+#X connect 10 0 1 0;
+#X connect 11 0 15 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 1;
+#X connect 14 0 19 0;
 #X connect 15 0 16 0;
-#X connect 16 0 9 1;
-#X connect 18 0 14 0;
+#X connect 16 0 10 1;
+#X connect 17 0 18 0;
+#X connect 18 0 10 2;
 #X restore 450 252 pd vcf;
 #X obj 450 493 outlet~;
 #X obj 305 391 hsl 128 15 0 1 0 0 \$1-lfo-pitch-amt-s \$1-lfo-pitch-amt
@@ -216,9 +217,8 @@ lfo_filter_amt -2 -8 0 10 -262144 -1 -1 0 1;
 #X connect 38 0 39 0;
 #X connect 39 0 40 0;
 #X connect 40 0 46 0;
-#X connect 40 0 51 1;
 #X connect 40 1 50 1;
-#X connect 40 1 51 2;
+#X connect 40 1 51 1;
 #X connect 41 0 49 0;
 #X connect 42 0 43 0;
 #X connect 43 0 44 0;

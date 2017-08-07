@@ -1,4 +1,4 @@
-#N canvas 4 55 931 684 10;
+#N canvas -1 51 1201 677 10;
 #N canvas 0 51 450 300 init_akai 0;
 #X obj 10 14 loadbang;
 #X msg 10 36 midi-dialog 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 2 2;
@@ -84,14 +84,14 @@
 #X obj 33 99 pack 0 0 0;
 #X obj 33 121 route 1;
 #X obj 103 363 brute, f 50;
-#X obj 103 385 dac~;
+#X obj 103 465 dac~;
 #X text 575 104 TODO mikibrute LFO;
 #X obj 575 224 midiclockout;
 #X floatatom 656 205 5 0 0 0 bpm - -, f 5;
 #X obj 656 184 + 60;
 #X obj 575 180 loadbang;
 #X msg 575 202 1;
-#N canvas 526 318 450 300 init_touchosc 1;
+#N canvas 523 316 450 300 init_touchosc 0;
 #X msg 13 78 listen 8000;
 #X obj 13 120 netreceive -u -b;
 #X obj 13 142 oscparse;
