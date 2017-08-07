@@ -40,13 +40,13 @@ osc_metalizer_amt -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 163 241 hsl 128 15 0 1 0 0 \$1-f-freq-s \$1-f-freq f_freq -2
 -8 0 10 -262144 -1 -1 0 1;
 #X obj 163 271 hsl 128 15 0 1 0 0 \$1-f-res-s \$1-f-res f_res -2 -8
-0 10 -262144 -1 -1 0 1;
+0 10 -262144 -1 -1 12700 1;
 #X obj 163 301 hsl 128 15 0 1 0 0 \$1-f-env-amt-s \$1-f-env-amt f_env_amt
 -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 163 331 hsl 128 15 0 1 0 0 \$1-f-key-trk-s \$1-f-key-trk f_key_trk
 -2 -8 0 10 -262144 -1 -1 0 1;
-#X obj 301 241 hradio 15 1 0 3 empty empty f_type_lp/hp/ntch 0 -8 0
-10 -262144 -1 -1 0;
+#X obj 301 241 hradio 15 1 0 2 \$1-f-type-s empty f_type_lp/ntch 0
+-8 0 10 -262144 -1 -1 0;
 #X obj 301 271 hradio 15 1 0 2 \$1-f-env-spd-s empty f_env_fst/slw
 0 -8 0 10 -262144 -1 -1 1;
 #X obj 10 361 cnv 15 150 150 empty empty vca 20 12 0 14 -232576 -66577
@@ -163,9 +163,9 @@ lfo_vca_amt -2 -8 0 10 -262144 -1 -1 0 1;
 #X connect 7 0 3 3;
 #X connect 8 0 3 4;
 #X restore 450 230 pd vca;
-#N canvas 5 55 545 366 vcf 1;
-#X obj 28 24 inlet~;
-#X obj 27 194 outlet~;
+#N canvas 5 55 651 428 vcf 0;
+#X obj 27 24 inlet~;
+#X obj 27 314 outlet~;
 #X obj 267 24 inlet trigger;
 #X obj 267 150 mikiadsr;
 #X obj 277 45 r \$1-f-env-atk-s;
@@ -173,16 +173,34 @@ lfo_vca_amt -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 298 85 r \$1-f-env-sus-s;
 #X obj 309 105 r \$1-f-env-rel-s;
 #X obj 320 125 r \$1-f-env-spd-s;
-#X obj 199 195 lop~;
-#X obj 254 195 hip~;
-#X obj 313 199 bp~;
-#X connect 0 0 1 0;
+#X obj 26 232 vcf~;
+#X obj 70 210 r \$1-f-type-s;
+#X obj 52 254 *~;
+#X obj 70 232 invert;
+#X obj 167 24 inlet note;
+#X obj 51 169 * 3;
+#X obj 167 46 mtof;
+#X obj 167 68 sig~;
+#X floatatom 87 254 5 0 0 0 - - -, f 5;
+#X obj 51 147 r \$1-f-res-s;
+#X connect 0 0 9 0;
 #X connect 2 0 3 0;
 #X connect 4 0 3 1;
 #X connect 5 0 3 2;
 #X connect 6 0 3 3;
 #X connect 7 0 3 4;
 #X connect 8 0 3 5;
+#X connect 9 0 1 0;
+#X connect 9 1 11 0;
+#X connect 10 0 12 0;
+#X connect 11 0 1 0;
+#X connect 12 0 11 1;
+#X connect 12 0 17 0;
+#X connect 13 0 15 0;
+#X connect 14 0 9 2;
+#X connect 15 0 16 0;
+#X connect 16 0 9 1;
+#X connect 18 0 14 0;
 #X restore 450 252 pd vcf;
 #X obj 450 493 outlet~;
 #X obj 305 391 hsl 128 15 0 1 0 0 \$1-lfo-pitch-amt-s \$1-lfo-pitch-amt
@@ -198,8 +216,9 @@ lfo_filter_amt -2 -8 0 10 -262144 -1 -1 0 1;
 #X connect 38 0 39 0;
 #X connect 39 0 40 0;
 #X connect 40 0 46 0;
+#X connect 40 0 51 1;
 #X connect 40 1 50 1;
-#X connect 40 1 51 1;
+#X connect 40 1 51 2;
 #X connect 41 0 49 0;
 #X connect 42 0 43 0;
 #X connect 43 0 44 0;
