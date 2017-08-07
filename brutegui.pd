@@ -1,0 +1,71 @@
+#N canvas 48 50 560 552 10;
+#X obj 10 6 cnv 15 430 180 empty empty oscillator 20 12 0 14 -204786
+-66577 0;
+#X obj 23 38 hsl 128 15 0 1 0 0 empty empty osc_sub_amt -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 23 68 hsl 128 15 0 1 0 0 empty empty osc_saw_amt -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 23 98 hsl 128 15 0 1 0 0 empty empty osc_sq_amt -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 23 128 hsl 128 15 0 1 0 0 empty empty osc_tri_amt -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 23 158 hsl 128 15 0 1 0 0 empty empty osc_noise_amt -2 -8 0
+10 -262144 -1 -1 0 1;
+#X obj 163 98 hsl 128 15 0 1 0 0 empty empty osc_sq_pw -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 163 68 hsl 128 15 0 1 0 0 empty empty osc_ultrasaw_amt -2 -8
+0 10 -262144 -1 -1 0 1;
+#X obj 161 38 hradio 15 1 0 2 empty empty osc_sub_sq/sin 0 -8 0 10
+-262144 -1 -1 0;
+#X obj 251 38 hradio 15 1 0 2 empty empty osc_sub_oct 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 303 68 hsl 128 15 0 1 0 0 empty empty osc_ultrasaw_rate -2 -8
+0 10 -262144 -1 -1 0 1;
+#X obj 303 98 hsl 128 15 0 1 0 0 empty empty osc_sq_pw_env_amt -2 -8
+0 10 -262144 -1 -1 0 1;
+#X obj 163 128 hsl 128 15 0 1 0 0 empty empty osc_metalizer_amt -2
+-8 0 10 -262144 -1 -1 0 1;
+#X obj 303 128 hsl 128 15 0 1 0 0 empty empty osc_metalizer_env_amt
+-2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 10 197 cnv 15 430 150 empty empty filter 20 12 0 14 -261682
+-66577 0;
+#X obj 23 228 hsl 128 15 0 1 0 0 empty empty f_env_atk -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 23 258 hsl 128 15 0 1 0 0 empty empty f_env_dcy -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 23 288 hsl 128 15 0 1 0 0 empty empty f_env_sus -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 23 318 hsl 128 15 0 1 0 0 empty empty f_env_rel -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 163 228 hsl 128 15 0 1 0 0 empty empty f_freq -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 163 258 hsl 128 15 0 1 0 0 empty empty f_res -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 163 288 hsl 128 15 0 1 0 0 empty empty f_env_amt -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 163 318 hsl 128 15 0 1 0 0 empty empty f_key_trk -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 301 228 hradio 15 1 0 3 empty empty f_type_lp/hp/ntch 0 -8 0
+10 -262144 -1 -1 0;
+#X obj 301 258 hradio 15 1 0 2 empty empty f_env_fst/slw 0 -8 0 10
+-262144 -1 -1 0;
+#X obj 10 358 cnv 15 150 150 empty empty vca 20 12 0 14 -232576 -66577
+0;
+#X obj 171 358 cnv 15 150 150 empty empty lfo 20 12 0 14 -204800 -66577
+0;
+#X obj 23 388 hsl 128 15 0 1 0 0 empty empty vca_env_atk -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 23 418 hsl 128 15 0 1 0 0 empty empty vca_env_dcy -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 23 448 hsl 128 15 0 1 0 0 empty empty vca_env_sus -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 23 478 hsl 128 15 0 1 0 0 empty empty vca_env_rel -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 183 388 hsl 128 15 0 1 0 0 empty empty lfo_rate -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 183 418 hsl 128 15 0 1 0 0 empty empty lfo_wave -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 183 448 hsl 128 15 0 1 0 0 empty empty lfo_pwm_metalizer_amt
+-2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 183 478 hsl 128 15 0 1 0 0 empty empty lfo_vca_amt -2 -8 0 10
+-262144 -1 -1 0 1;
