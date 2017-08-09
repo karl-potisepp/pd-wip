@@ -1,4 +1,4 @@
-#N canvas -1 51 1201 677 10;
+#N canvas 0 51 1201 677 10;
 #N canvas 0 51 450 300 init_akai 0;
 #X obj 10 14 loadbang;
 #X msg 10 36 midi-dialog 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 2 2;
@@ -162,8 +162,14 @@
 #X msg 462 41 1;
 #X msg 498 41 \; pd dsp 1 \;;
 #X obj 33 77 poly 1 1;
-#X obj 170 79 pack f f;
+#X obj 170 119 pack f f;
 #X obj 742 40 brutegui 1;
+#X obj 170 92 makenote 64 100;
+#X obj 170 26 metro 1 60 permin;
+#X obj 170 5 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 170 48 random 12;
+#X obj 170 70 + 40;
 #X connect 2 0 3 0;
 #X connect 2 0 56 0;
 #X connect 2 1 4 0;
@@ -225,3 +231,9 @@
 #X connect 56 0 57 0;
 #X connect 57 0 8 0;
 #X connect 57 0 8 1;
+#X connect 58 0 56 0;
+#X connect 58 1 56 1;
+#X connect 59 0 61 0;
+#X connect 60 0 59 0;
+#X connect 61 0 62 0;
+#X connect 62 0 58 0;
