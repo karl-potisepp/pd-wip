@@ -1,41 +1,41 @@
-#N canvas 160 102 1057 612 10;
+#N canvas 42 58 1057 612 10;
 #X obj 18 39 hsl 128 15 0 1 0 0 \$1-vco-freq empty vco_freq -2 -8 0
 10 -262144 -1 -1 6350 1;
 #X obj 18 69 hsl 128 15 0 1 0 0 \$1-vco-pwm empty vco_pwm -2 -8 0 10
--262144 -1 -1 2900 1;
+-262144 -1 -1 7100 1;
 #X obj 151 39 vradio 15 1 0 2 \$1-vco-wave empty sq/tr 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 0;
 #X obj 70 24 bng 15 250 50 0 empty empty vco_reset 17 7 0 10 -262144
 -1 -1;
 #X msg 15 4 0.5;
 #X obj 198 39 hsl 128 15 0 1 0 0 \$1-vcf-freq empty vcf_freq -2 -8
-0 10 -262144 -1 -1 5300 1;
+0 10 -262144 -1 -1 3900 1;
 #X obj 198 69 hsl 128 15 0 1 0 0 \$1-vcf-q empty vcf_q -2 -8 0 10 -262144
--1 -1 8100 1;
+-1 -1 0 1;
 #X obj 331 39 vradio 15 1 0 2 \$1-vcf-envon empty vca_on/eg 0 -8 0
 10 -262144 -1 -1 1;
 #X obj 18 109 hsl 128 15 0 1 0 0 \$1-osc-mod-amt empty osc_mod_amt
--2 -8 0 10 -262144 -1 -1 6700 1;
+-2 -8 0 10 -262144 -1 -1 4700 1;
 #X obj 15 139 hradio 15 1 0 2 \$1-osc-mod-type empty type_eg/lfo 0
 -8 0 10 -262144 -1 -1 1;
 #X obj 85 139 hradio 15 1 0 2 \$1-osc-mod-dest empty dest_pwm/freq
 0 -8 0 10 -262144 -1 -1 1;
 #X obj 18 179 hsl 128 15 0 1 0 0 \$1-lfo-rate empty lfo_rate -2 -8
-0 10 -262144 -1 -1 100 1;
+0 10 -262144 -1 -1 0 1;
 #X obj 18 209 hsl 128 15 0 1 0 0 \$1-glide empty glide -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 15 239 hradio 15 1 0 2 \$1-lfo-wave empty sq/tri 0 -8 0 10 -262144
 -1 -1 1;
 #X obj 198 109 hsl 128 15 0 1 0 0 \$1-filter-mod-amt empty filter_mod_amt
--2 -8 0 10 -262144 -1 -1 10000 1;
+-2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 195 139 hradio 15 1 0 2 \$1-filter-mod-type empty eg/lfo 0 -8
 0 10 -262144 -1 -1 1;
 #X obj 235 139 hradio 15 1 0 2 empty empty +/- 0 -8 0 10 -262144 -1
 -1 0;
 #X obj 198 179 hsl 128 15 0 1 0 0 \$1-env-attack empty env_attack -2
--8 0 10 -262144 -1 -1 500 1;
+-8 0 10 -262144 -1 -1 3600 1;
 #X obj 198 209 hsl 128 15 0 1 0 0 \$1-env-decay empty env_decay -2
--8 0 10 -262144 -1 -1 600 1;
+-8 0 10 -262144 -1 -1 4400 1;
 #X obj 434 56 stripnote;
 #X obj 434 34 notein;
 #X obj 434 188 mtof;
@@ -63,14 +63,14 @@
 #X msg 20 32 1;
 #X obj 125 154 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 247 155 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 247 155 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 125 48 r \$1-osc-mod-dest;
 #X obj 247 112 r \$1-osc-mod-type;
 #X obj 247 134 invert;
-#X obj 125 70 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 125 70 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 310 163 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 310 163 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 310 185 metro 100;
 #X obj 310 207 snapshot~;
@@ -107,20 +107,18 @@
 #X restore 434 315 pd triangle;
 #X obj 479 188 * 1000;
 #X obj 497 232 r \$1-vco-wave;
-#X obj 497 297 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 497 297 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#N canvas 634 187 704 434 pulse 0;
+#N canvas 477 76 704 434 pulse 1;
 #X obj 15 131 inlet freq;
 #X obj 420 223 inlet pwm;
 #X obj 602 4 inlet toggle;
-#X obj 15 343 outlet~;
+#X obj 15 321 outlet~;
 #X obj 15 153 sig~;
 #X obj 95 5 r~ \$1-lfo;
 #X obj 95 47 *~;
 #X obj 95 153 *~;
 #X obj 15 175 +~;
-#X obj 15 197 phasor~;
-#X obj 15 299 -~ 0.5;
 #X obj 602 26 switch~;
 #X obj 110 26 r \$1-osc-mod-dest;
 #X obj 231 4 r~ \$1-env-gen;
@@ -148,68 +146,66 @@
 #X obj 48 255 metro 20;
 #X obj 48 277 snapshot~;
 #X obj 423 245 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2900 1;
+-1 -1 7100 1;
 #X floatatom 420 265 5 0 0 0 - - -, f 5;
 #X msg 420 201 0.35;
 #X obj 420 174 sel 0;
 #X msg 459 201 1;
 #X msg 48 233 0;
-#X obj 15 321 creb/blosc~ comparator;
+#X obj 15 299 sqosc~;
 #X connect 0 0 4 0;
-#X connect 1 0 37 0;
-#X connect 2 0 11 0;
+#X connect 1 0 35 0;
+#X connect 2 0 9 0;
 #X connect 4 0 8 0;
 #X connect 5 0 6 0;
-#X connect 6 0 20 0;
+#X connect 6 0 18 0;
 #X connect 7 0 8 1;
-#X connect 8 0 9 0;
-#X connect 9 0 10 0;
-#X connect 10 0 43 0;
-#X connect 12 0 6 1;
-#X connect 12 0 26 0;
-#X connect 13 0 14 0;
-#X connect 14 0 21 0;
-#X connect 15 0 14 1;
-#X connect 15 0 27 0;
-#X connect 16 0 19 0;
-#X connect 16 0 20 1;
-#X connect 17 0 18 0;
-#X connect 18 0 7 1;
-#X connect 19 0 21 1;
-#X connect 20 0 7 0;
-#X connect 21 0 7 0;
+#X connect 8 0 41 0;
+#X connect 10 0 6 1;
+#X connect 10 0 24 0;
+#X connect 11 0 12 0;
+#X connect 12 0 19 0;
+#X connect 13 0 12 1;
+#X connect 13 0 25 0;
+#X connect 14 0 17 0;
+#X connect 14 0 18 1;
+#X connect 15 0 16 0;
+#X connect 16 0 7 1;
+#X connect 17 0 19 1;
+#X connect 18 0 7 0;
+#X connect 19 0 7 0;
+#X connect 20 0 21 0;
+#X connect 21 0 26 0;
 #X connect 22 0 23 0;
 #X connect 23 0 28 0;
-#X connect 24 0 25 0;
-#X connect 25 0 30 0;
-#X connect 26 0 23 1;
-#X connect 27 0 25 1;
-#X connect 27 0 34 1;
-#X connect 27 0 40 0;
-#X connect 27 0 35 0;
-#X connect 28 0 32 0;
+#X connect 24 0 21 1;
+#X connect 25 0 23 1;
+#X connect 25 0 32 1;
+#X connect 25 0 38 0;
+#X connect 25 0 33 0;
+#X connect 26 0 30 0;
+#X connect 27 0 26 1;
+#X connect 27 0 29 0;
+#X connect 28 0 30 0;
 #X connect 29 0 28 1;
-#X connect 29 0 31 0;
-#X connect 30 0 32 0;
-#X connect 31 0 30 1;
-#X connect 32 0 36 0;
+#X connect 30 0 34 0;
+#X connect 31 0 32 0;
+#X connect 32 0 30 1;
+#X connect 32 0 38 0;
 #X connect 33 0 34 0;
-#X connect 34 0 32 1;
-#X connect 34 0 40 0;
+#X connect 34 0 41 1;
 #X connect 35 0 36 0;
-#X connect 36 0 10 1;
-#X connect 37 0 38 0;
-#X connect 38 0 10 1;
-#X connect 39 0 37 0;
-#X connect 40 0 39 0;
-#X connect 40 0 42 0;
-#X connect 40 1 41 0;
-#X connect 41 0 35 0;
-#X connect 42 0 35 0;
-#X connect 43 0 3 0;
+#X connect 36 0 41 1;
+#X connect 37 0 35 0;
+#X connect 38 0 37 0;
+#X connect 38 0 40 0;
+#X connect 38 1 39 0;
+#X connect 39 0 33 0;
+#X connect 40 0 33 0;
+#X connect 41 0 3 0;
 #X restore 507 315 pd pulse;
 #X obj 552 274 invert;
-#X obj 552 296 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 552 296 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 529 252 r \$1-vco-pwm;
 #X obj 434 431 *~;
@@ -284,7 +280,7 @@
 #X obj 455 498 r \$1-vcf-freq;
 #X obj 476 519 r \$1-vcf-q;
 #X obj 434 562 dac~;
-#N canvas 656 71 450 300 lfo 1;
+#N canvas 656 71 450 300 lfo 0;
 #X obj 58 32 r \$1-lfo-rate;
 #X obj 189 30 r \$1-lfo-wave;
 #X obj 58 54 * 200;
@@ -296,7 +292,7 @@
 #X obj 174 98 expr~ $v1 > 0.5;
 #X obj 174 120 -~ 0.5;
 #X obj 174 192 *~;
-#X obj 73 173 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 73 173 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 189 173 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
