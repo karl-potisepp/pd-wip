@@ -1,43 +1,5 @@
-#N canvas 42 58 1057 612 10;
-#X obj 18 39 hsl 128 15 0 1 0 0 \$1-vco-freq empty vco_freq -2 -8 0
-10 -262144 -1 -1 6350 1;
-#X obj 18 69 hsl 128 15 0 1 0 0 \$1-vco-pwm empty vco_pwm -2 -8 0 10
--262144 -1 -1 7100 1;
-#X obj 151 39 vradio 15 1 0 2 \$1-vco-wave empty sq/tr 0 -8 0 10 -262144
--1 -1 0;
-#X obj 70 24 bng 15 250 50 0 empty empty vco_reset 17 7 0 10 -262144
--1 -1;
-#X msg 15 4 0.5;
-#X obj 198 39 hsl 128 15 0 1 0 0 \$1-vcf-freq empty vcf_freq -2 -8
-0 10 -262144 -1 -1 3900 1;
-#X obj 198 69 hsl 128 15 0 1 0 0 \$1-vcf-q empty vcf_q -2 -8 0 10 -262144
--1 -1 0 1;
-#X obj 331 39 vradio 15 1 0 2 \$1-vcf-envon empty vca_on/eg 0 -8 0
-10 -262144 -1 -1 1;
-#X obj 18 109 hsl 128 15 0 1 0 0 \$1-osc-mod-amt empty osc_mod_amt
--2 -8 0 10 -262144 -1 -1 4700 1;
-#X obj 15 139 hradio 15 1 0 2 \$1-osc-mod-type empty type_eg/lfo 0
--8 0 10 -262144 -1 -1 1;
-#X obj 85 139 hradio 15 1 0 2 \$1-osc-mod-dest empty dest_pwm/freq
-0 -8 0 10 -262144 -1 -1 1;
-#X obj 18 179 hsl 128 15 0 1 0 0 \$1-lfo-rate empty lfo_rate -2 -8
-0 10 -262144 -1 -1 0 1;
-#X obj 18 209 hsl 128 15 0 1 0 0 \$1-glide empty glide -2 -8 0 10 -262144
--1 -1 0 1;
-#X obj 15 239 hradio 15 1 0 2 \$1-lfo-wave empty sq/tri 0 -8 0 10 -262144
--1 -1 1;
-#X obj 198 109 hsl 128 15 0 1 0 0 \$1-filter-mod-amt empty filter_mod_amt
--2 -8 0 10 -262144 -1 -1 0 1;
-#X obj 195 139 hradio 15 1 0 2 \$1-filter-mod-type empty eg/lfo 0 -8
-0 10 -262144 -1 -1 1;
-#X obj 235 139 hradio 15 1 0 2 empty empty +/- 0 -8 0 10 -262144 -1
--1 0;
-#X obj 198 179 hsl 128 15 0 1 0 0 \$1-env-attack empty env_attack -2
--8 0 10 -262144 -1 -1 3600 1;
-#X obj 198 209 hsl 128 15 0 1 0 0 \$1-env-decay empty env_decay -2
--8 0 10 -262144 -1 -1 4400 1;
+#N canvas 185 99 1057 612 10;
 #X obj 434 56 stripnote;
-#X obj 434 34 notein;
 #X obj 434 188 mtof;
 #X obj 434 210 pack 0 0;
 #X obj 434 232 line;
@@ -107,9 +69,9 @@
 #X restore 434 315 pd triangle;
 #X obj 479 188 * 1000;
 #X obj 497 232 r \$1-vco-wave;
-#X obj 497 297 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 497 297 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#N canvas 477 76 704 434 pulse 1;
+#N canvas 477 76 704 434 pulse 0;
 #X obj 15 131 inlet freq;
 #X obj 420 223 inlet pwm;
 #X obj 602 4 inlet toggle;
@@ -146,7 +108,7 @@
 #X obj 48 255 metro 20;
 #X obj 48 277 snapshot~;
 #X obj 423 245 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 7100 1;
+-1 -1 0 1;
 #X floatatom 420 265 5 0 0 0 - - -, f 5;
 #X msg 420 201 0.35;
 #X obj 420 174 sel 0;
@@ -205,7 +167,7 @@
 #X connect 41 0 3 0;
 #X restore 507 315 pd pulse;
 #X obj 552 274 invert;
-#X obj 552 296 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 552 296 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 529 252 r \$1-vco-pwm;
 #X obj 434 431 *~;
@@ -248,7 +210,7 @@
 #X obj 808 398 r~ \$1-lfo;
 #X obj 752 471 r \$1-filter-mod-amt;
 #X obj 737 494 *~;
-#N canvas 685 151 450 300 moogfilt 0;
+#N canvas 107 176 450 300 moogfilt 0;
 #X obj 34 35 inlet~;
 #X obj 322 35 inlet~;
 #X obj 34 198 outlet~;
@@ -279,8 +241,7 @@
 #X restore 434 540 pd moogfilt;
 #X obj 455 498 r \$1-vcf-freq;
 #X obj 476 519 r \$1-vcf-q;
-#X obj 434 562 dac~;
-#N canvas 656 71 450 300 lfo 0;
+#N canvas 822 133 450 300 lfo 0;
 #X obj 58 32 r \$1-lfo-rate;
 #X obj 189 30 r \$1-lfo-wave;
 #X obj 58 54 * 200;
@@ -313,77 +274,118 @@
 #X connect 12 0 10 1;
 #X connect 13 0 12 0;
 #X restore 16 295 pd lfo;
-#X obj 352 96 loadbang;
-#X msg 352 118 1;
 #X obj 479 166 r \$1-glide;
+#X msg 13 4 0.5;
+#X obj 16 62 hsl 128 15 0 1 0 0 \$1-vco-freq \$1-vco-freq-r vco_freq
+-2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 16 92 hsl 128 15 0 1 0 0 \$1-vco-pwm \$1-vco-pwm-r vco_pwm -2
+-8 0 10 -262144 -1 -1 0 1;
+#X obj 149 62 vradio 15 1 0 2 \$1-vco-wave \$1-vco-wave-r sq/tr 0 -8
+0 10 -262144 -1 -1 1;
+#X obj 68 47 bng 15 250 50 0 empty empty vco_reset 17 7 0 10 -262144
+-1 -1;
+#X obj 186 62 hsl 128 15 0 1 0 0 \$1-vcf-freq \$1-vcf-freq-r vcf_freq
+-2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 186 92 hsl 128 15 0 1 0 0 \$1-vcf-q \$1-vcf-q-r vcf_q -2 -8
+0 10 -262144 -1 -1 0 1;
+#X obj 319 62 vradio 15 1 0 2 \$1-vcf-envon \$1-vcf-envon-r vca_on/eg
+-35 -8 0 10 -262144 -1 -1 1;
+#X obj 186 122 hsl 128 15 0 1 0 0 \$1-filter-mod-amt \$1-filter-mod-amt-r
+filter_mod_amt -2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 183 152 hradio 15 1 0 2 \$1-filter-mod-type \$1-filter-mod-type-r
+eg/lfo 0 -8 0 10 -262144 -1 -1 1;
+#X obj 223 152 hradio 15 1 0 2 empty empty +/- 0 -8 0 10 -262144 -1
+-1 0;
+#X obj 186 182 hsl 128 15 0 1 0 0 \$1-env-attack \$1-env-attack-r env_attack
+-2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 186 212 hsl 128 15 0 1 0 0 \$1-env-decay \$1-env-decay-r env_decay
+-2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 350 129 loadbang;
+#X msg 350 151 1;
+#X obj 16 122 hsl 128 15 0 1 0 0 \$1-osc-mod-amt \$1-osc-mod-amt-r
+osc_mod_amt -2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 13 152 hradio 15 1 0 2 \$1-osc-mod-type \$1-osc-mod-type-r type_eg/lfo
+0 -8 0 10 -262144 -1 -1 1;
+#X obj 83 152 hradio 15 1 0 2 \$1-osc-mod-dest \$1-osc-mod-dest-r dest_pwm/freq
+0 -8 0 10 -262144 -1 -1 1;
+#X obj 16 182 hsl 128 15 0 1 0 0 \$1-lfo-rate \$1-lfo-rate-r lfo_rate
+-2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 16 212 hsl 128 15 0 1 0 0 \$1-glide \$1-glide-r glide -2 -8
+0 10 -262144 -1 -1 0 1;
+#X obj 13 239 hradio 15 1 0 2 \$1-lfo-wave \$1-lfo-wave-r sq/tri 0
+-8 0 10 -262144 -1 -1 1;
+#X obj 434 34 unpack f f;
+#X obj 434 13 inlet note;
+#X obj 434 562 outlet~;
+#X connect 0 0 13 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
 #X connect 3 0 4 0;
-#X connect 4 0 0 0;
-#X connect 19 0 33 0;
-#X connect 20 0 19 0;
-#X connect 20 1 19 1;
+#X connect 3 0 8 0;
+#X connect 4 0 12 0;
+#X connect 5 0 2 1;
+#X connect 6 0 7 0;
+#X connect 6 0 9 0;
+#X connect 7 0 4 1;
+#X connect 8 0 12 0;
+#X connect 9 0 10 0;
+#X connect 10 0 8 2;
+#X connect 11 0 8 1;
+#X connect 12 0 48 0;
+#X connect 13 0 1 0;
+#X connect 13 0 28 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 13 1;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 18 0 23 1;
+#X connect 19 0 20 0;
+#X connect 19 1 21 0;
+#X connect 20 0 22 0;
 #X connect 21 0 22 0;
-#X connect 22 0 23 0;
-#X connect 23 0 24 0;
-#X connect 23 0 28 0;
-#X connect 24 0 32 0;
-#X connect 25 0 22 1;
-#X connect 26 0 27 0;
-#X connect 26 0 29 0;
-#X connect 27 0 24 1;
-#X connect 28 0 32 0;
-#X connect 29 0 30 0;
-#X connect 30 0 28 2;
-#X connect 31 0 28 1;
-#X connect 32 0 68 0;
-#X connect 33 0 21 0;
-#X connect 33 0 48 0;
+#X connect 22 0 12 1;
+#X connect 23 0 12 1;
+#X connect 24 0 33 0;
+#X connect 25 0 26 0;
+#X connect 26 0 36 1;
+#X connect 27 0 38 0;
+#X connect 27 0 23 0;
+#X connect 27 0 43 0;
+#X connect 28 0 37 0;
+#X connect 29 0 36 0;
+#X connect 30 0 29 0;
+#X connect 30 1 32 0;
+#X connect 30 2 31 1;
+#X connect 31 0 27 0;
+#X connect 32 0 31 0;
+#X connect 33 0 37 1;
 #X connect 34 0 35 0;
-#X connect 35 0 36 0;
-#X connect 36 0 33 1;
-#X connect 37 0 38 0;
-#X connect 38 0 39 0;
-#X connect 38 0 43 1;
+#X connect 34 1 31 1;
+#X connect 35 0 31 0;
+#X connect 36 0 34 0;
+#X connect 37 0 30 0;
 #X connect 39 0 40 0;
-#X connect 39 1 41 0;
-#X connect 40 0 42 0;
-#X connect 41 0 42 0;
-#X connect 42 0 32 1;
-#X connect 43 0 32 1;
-#X connect 44 0 53 0;
-#X connect 45 0 46 0;
-#X connect 46 0 56 1;
-#X connect 47 0 58 0;
-#X connect 47 0 43 0;
-#X connect 47 0 63 0;
-#X connect 48 0 57 0;
-#X connect 49 0 56 0;
-#X connect 50 0 49 0;
-#X connect 50 1 52 0;
-#X connect 50 2 51 1;
-#X connect 51 0 47 0;
-#X connect 52 0 51 0;
-#X connect 53 0 57 1;
-#X connect 54 0 55 0;
-#X connect 54 1 51 1;
-#X connect 55 0 51 0;
-#X connect 56 0 54 0;
-#X connect 57 0 50 0;
-#X connect 59 0 60 0;
-#X connect 59 0 62 0;
-#X connect 60 0 61 0;
-#X connect 61 0 63 1;
-#X connect 62 0 64 1;
-#X connect 63 0 67 0;
-#X connect 64 0 67 0;
-#X connect 65 0 64 0;
-#X connect 66 0 67 1;
-#X connect 67 0 68 3;
-#X connect 68 0 71 0;
-#X connect 68 0 71 1;
-#X connect 69 0 68 1;
-#X connect 70 0 68 2;
-#X connect 73 0 74 0;
-#X connect 74 0 7 0;
-#X connect 74 0 2 0;
-#X connect 74 0 15 0;
-#X connect 75 0 25 0;
+#X connect 39 0 42 0;
+#X connect 40 0 41 0;
+#X connect 41 0 43 1;
+#X connect 42 0 44 1;
+#X connect 43 0 47 0;
+#X connect 44 0 47 0;
+#X connect 45 0 44 0;
+#X connect 46 0 47 1;
+#X connect 47 0 48 3;
+#X connect 48 0 76 0;
+#X connect 49 0 48 1;
+#X connect 50 0 48 2;
+#X connect 52 0 5 0;
+#X connect 53 0 54 0;
+#X connect 57 0 53 0;
+#X connect 66 0 67 0;
+#X connect 67 0 60 0;
+#X connect 67 0 56 0;
+#X connect 67 0 62 0;
+#X connect 74 0 0 0;
+#X connect 74 1 0 1;
+#X connect 75 0 74 0;
+#X coords 0 -1 1 1 330 230 1 10 30;
