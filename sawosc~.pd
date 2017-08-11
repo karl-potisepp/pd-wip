@@ -1,9 +1,9 @@
-#N canvas 491 315 450 300 10;
+#N canvas 374 189 450 300 10;
 #X obj 9 80 phasor~;
 #X obj 9 170 outlet~ saw;
 #X obj 9 110 *~ 2;
 #X obj 9 140 -~ 1;
-#X obj 9 51 inlet freq;
+#X obj 9 51 inlet~ freq;
 #X connect 0 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;
