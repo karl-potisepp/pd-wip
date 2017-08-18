@@ -1,4 +1,4 @@
-#N canvas 0 23 1136 751 10;
+#N canvas 0 51 1136 718 10;
 #N canvas 0 51 450 300 init_akai 0;
 #X obj 10 14 loadbang;
 #X msg 10 36 midi-dialog 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 2 2;
@@ -6,7 +6,7 @@
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X restore 6 28 pd init_akai;
-#N canvas 208 24 915 622 prog1 0;
+#N canvas 202 51 915 622 prog1 1;
 #X floatatom 182 31 5 0 0 0 - - -, f 5;
 #X obj 182 9 pgmin 1;
 #X obj 112 31 f 1;
@@ -140,28 +140,34 @@
 #X obj 194 48 + 60;
 #X obj 125 44 loadbang;
 #X msg 125 66 1;
-#N canvas 523 316 450 300 init_touchosc 1;
+#N canvas 583 227 450 300 init_touchosc 1;
 #X msg 13 78 listen 8000;
 #X obj 13 120 netreceive -u -b;
 #X obj 13 142 oscparse;
 #X msg 20 99 listen 0;
 #X obj 13 17 loadbang;
-#X msg 149 78 connect 192.168.3.2 9000;
-#X obj 143 120 netsend -u -b;
-#X msg 150 99 disconnect;
-#X obj 143 35 list prepend send;
-#X obj 143 57 list trim;
+#X msg 199 78 connect 192.168.3.2 9000;
+#X obj 193 150 netsend -u -b;
+#X msg 200 129 disconnect;
+#X obj 193 35 list prepend send;
+#X obj 193 57 list trim;
 #X obj 13 164 route list;
-#X obj 143 13 r osc-out;
+#X obj 193 13 r osc-out;
 #X obj 13 186 s osc-in;
 #X obj 20 58 bng 15 250 50 0 empty empty disconnect 17 7 0 10 -262144
 -1 -1;
+#X msg 209 98 connect 192.168.43.1 9000;
+#X msg 135 200 it work!;
+#X obj 135 242 oscformat /conf/ip;
+#X obj 135 264 s osc-out;
+#X obj 135 64 t b b;
+#X obj 135 222 cyclone/tosymbol;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 10 0;
 #X connect 3 0 1 0;
 #X connect 4 0 0 0;
-#X connect 4 0 5 0;
+#X connect 4 0 18 0;
 #X connect 5 0 6 0;
 #X connect 7 0 6 0;
 #X connect 8 0 9 0;
@@ -170,6 +176,12 @@
 #X connect 11 0 8 0;
 #X connect 13 0 3 0;
 #X connect 13 0 7 0;
+#X connect 14 0 6 0;
+#X connect 15 0 19 0;
+#X connect 16 0 17 0;
+#X connect 18 0 15 0;
+#X connect 18 1 14 0;
+#X connect 19 0 16 0;
 #X restore 6 49 pd init_touchosc;
 #X obj 194 5 r globalbpm;
 #X obj 194 27 * 127;
@@ -208,7 +220,7 @@
 #X obj 496 427 ctlin 22 1;
 #X obj 443 706 s~ ws3;
 #X obj 9 218 brutegui 1;
-#X obj 65 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 119
+#X obj 65 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 161 197 bng 15 250 50 0 tick empty empty 17 7 0 10 -262144 -1
 -1;
@@ -218,13 +230,13 @@
 #X floatatom 241 135 5 0 0 0 - - -, f 5;
 #X obj 161 175 metro 1000;
 #X obj 241 113 / 60;
-#X obj 496 148 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 86
+#X obj 496 148 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 496 449 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #N canvas 378 95 711 553 mixer 0;
 #X obj 21 39 hsl 128 15 0 1 0 0 empty brute-lvl brute_lvl -2 -8 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 12700 1;
 #X obj 21 69 hsl 128 15 0 1 0 0 empty ws2-lvl ws2_lvl -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 21 99 hsl 128 15 0 1 0 0 empty ws3-lvl ws3_lvl -2 -8 0 10 -262144
